@@ -48,7 +48,7 @@ class ArticleController extends Controller
         $article->Date = $request->date;
 
         $article->save();
-        return back()->withSuccess('article ajouté avec succès');
+        return redirect()->route('article.index')->withSuccess('article ajouté avec succès');
 
     }
 
@@ -116,7 +116,7 @@ class ArticleController extends Controller
         $article->Date = $request->date;
 
         $article->save();
-        return back()->withSuccess('article Modifié avec succès');
+        return redirect()->route('article.index')->withSuccess('article Modifié avec succès');
     }
 
     /**

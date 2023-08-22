@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Article;
 use App\Models\Photo;
+use App\Models\Membre;
+use App\Models\Article;
 use Illuminate\Http\Request;
 
 class AcceuilController extends Controller
@@ -13,7 +14,8 @@ class AcceuilController extends Controller
         public function index(){
             $article = Article::latest()->get();
             $photo = Photo::latest()->get();
-            return view('pages.acceuil',compact('article','photo'));
+            $membre = Membre::latest()->get();
+            return view('pages.acceuil',compact('article','photo','membre'));
         }
 
 }

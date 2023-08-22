@@ -52,7 +52,7 @@ class PhotoController extends Controller
         $photo->Categorie = $request->categorie;
 
         $photo->save();
-        return back()->withSuccess('Photo ajoutée avec succès');
+        return redirect()->route('photo.index')->withSuccess('Photo ajoutée avec succès');
     }
 
     /**
@@ -112,7 +112,7 @@ class PhotoController extends Controller
         $photo->Categorie = $request->categorie;
 
         $photo->save();
-        return back()->withSuccess('Photo modifié avec succès');
+        return redirect()->route('photo.index')->withSuccess('Photo modifié avec succès');
     }
 
     /**

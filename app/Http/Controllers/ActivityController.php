@@ -54,7 +54,7 @@ class ActivityController extends Controller
         $activite->Status = $request->status;
 
         $activite->save();
-        return back()->withSuccess('Activité ajoutée avec succès');
+        return redirect()->route('activite.index')->withSuccess('Activité ajoutée avec succès');
 
 
     }
@@ -133,7 +133,7 @@ class ActivityController extends Controller
         $activite->Status = $request->status;
 
         $activite->save();
-        return back()->withSuccess('Activité Modifiée avec succès');
+        return redirect()->route('activite.index')->withSuccess('Activité Modifiée avec succès');
     }
 
     /**

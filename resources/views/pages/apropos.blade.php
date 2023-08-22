@@ -158,92 +158,39 @@
     </div>
 </section>
 
-<section id="membres" class="services pt-100 pb-70">
+<section class="services pt-100 pb-70">
     <div class="container">
         <div class="default-section-title default-section-title-middle">
         <h3>Notre Capital Humain</h3>
-        <p>Ce sont les différentes personnes qui oeuvrent mains dans la main pour une bonne marche du CDJS</p>
+        <p>C'est l'ensemble de ce corps personnel qui constitue le coeur du CDJS, eux qui travaillent en harmonie et dans un environnement favorable au travaul d'équipe pour Hausser le nom du Centre dans la sous région et même partout dans le monde </p>
         </div>
         <!-- ici je dois faire un foreach pour afficher les differentes activité qu'on creera dans la base de données -->
         <div class="section-content">
         <div class="service-slider-area-1 owl-carousel">
+        @foreach ($membre as $membre )
         <div class="service-card mlr-15 mb-30">
             <div class="team-card">
                 <div class="team-card-img">
-                <img src="assets/images/team/p1.jpg" class="d-block w-100" alt="...">
+                <img src="membres/{{$membre->Image}}" class="d-block w-100" alt="...">
                     <div class="team-social-icons">
                     <ul>
-                    <li><a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                    <li><a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
-                    <li><a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                    <li><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                    <li><a href="#/" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
                     </ul>
                     </div>
                 </div>
                 <div class="team-card-text">
-                <h4>Francis Chucks NJOAGUANI</h4>
-                <p>Directeur General</p>
+                <h5>{{$membre->Nom}}</h5>
+                <p>{{$membre->Poste}}</p>
                 </div>
             </div>
         </div>
-        <div class="service-card mlr-15 mb-30">
-            <div class="team-card">
-                <div class="team-card-img">
-                <img src="assets/images/team/p2.jpg" class="d-block w-100" alt="...">
-                    <div class="team-social-icons">
-                    <ul>
-                    <li><a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                    <li><a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
-                    <li><a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                    <li><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                    </ul>
-                    </div>
-                </div>
-                <div class="team-card-text">
-                <h4>Gyslain OUEDRAOGO</h4>
-                <p>Assistant IT</p>
-                </div>
-            </div>
-        </div> 
-        <div class="service-card mlr-15 mb-30">
-            <div class="team-card">
-                <div class="team-card-img">
-                <img src="assets/images/team/p3.jpg" class="d-block w-100" alt="...">
-                    <div class="team-social-icons">
-                    <ul>
-                    <li><a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                    <li><a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
-                    <li><a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                    <li><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                    </ul>
-                    </div>
-                </div>
-                <div class="team-card-text">
-                <h4>MR OLIVIER</h4>
-                <p>Coordonateur PVC</p>
-                </div>
-            </div>
-        </div><div class="service-card mlr-15 mb-30">
-            <div class="team-card">
-                <div class="team-card-img">
-                <img src="assets/images/team/p4.jpg" class="d-block w-100" alt="...">
-                    <div class="team-social-icons">
-                    <ul>
-                    <li><a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                    <li><a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
-                    <li><a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                    <li><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                    </ul>
-                    </div>
-                </div>
-                <div class="team-card-text">
-                <h4>Hamidou SANGLA</h4>
-                <p>Assistant en Communication</p>
-                </div>
-            </div>
-        </div> 
+       @endforeach
         </div>
         </div>
     </div>
 </section>
+
 @endsection

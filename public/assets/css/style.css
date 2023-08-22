@@ -2391,14 +2391,15 @@ Index 01 team Area CSS
 }
 
 .team-card .team-card-text {
+  height: 120px;
   text-align: center;
   padding: 25px 25px 0px;
 }
 
-.team-card .team-card-text h4 {
+.team-card .team-card-text h5 {
   margin-bottom: 8px;
   font-size: var(--card-title-fontSize);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .team-card .team-card-text p {

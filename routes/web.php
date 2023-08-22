@@ -8,6 +8,7 @@ use App\Http\Controllers\ProposController;
 use App\Http\Controllers\AcceuilController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ActivityController;
+use App\Http\Controllers\MembreController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,4 +42,5 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('article', ArticleController::class);
     Route::resource('photo', PhotoController::class);
     Route::resource('activite', ActivityController::class);
+    Route::resource('membre', MembreController::class);
 });

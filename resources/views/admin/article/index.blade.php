@@ -27,6 +27,7 @@
             </tr>
         </thead>
         <tbody>
+        @if (!empty($articles) && $articles->count())
             @foreach ($articles as $article )
             <tr>
                 <td scope="col">{{$loop->index+1}}</td>
@@ -38,16 +39,16 @@
                     <img src="articles/{{$article->Image}}" alt="" srcset="" class="rounded-circle" width="60" height="60">
                 </td>
                 <td scope="col">
-                    <a href="{{ route('article.edit', $article)}}"class="btn btn-info">Edit</a>
+                    <a href="{{ route('article.edit', $article->id)}}"class="btn btn-info">Edit</a>
 
-                    <form method="POST" class="d-inline" action="{{ route('article.destroy', $article)}}" >
+                    <form method="POST" class="d-inline" action="{{ route('article.destroy', $article->id)}}" >
                                   <!-- CSRF token -->
                                   @csrf
                                   <!-- <input type="hidden" name="_method" value="DELETE"> -->
                                   @method("DELETE")
                                   <button type="submit"class="btn btn-danger">Delete</button>
                     </form> 
-                    <form method="GET" class="d-inline" action="{{ route('article.show', $article)}}" enctype="multipart/form-data" >
+                    <form method="GET" class="d-inline" action="{{ route('article.show', $article->id)}}" enctype="multipart/form-data" >
                                 
                                   <!-- CSRF token -->
                                   <!-- <input type="hidden" name="_method" value="DELETE"> -->
@@ -56,8 +57,14 @@
                 </td>
             </tr>
             @endforeach
+            @else
+                <tr>
+                    <td colspan="6">liste vide. </td>
+                </tr>
+            @endif
         </tbody>
     </table>
+    <div class="row">{{ $articles->links() }}</div>
 </div>
 </center>
 @endsection

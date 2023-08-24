@@ -18,7 +18,7 @@
 <meta name="keywords" content="flat ui, admin Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
 <meta name="author" content="colorlib" />
 
-<link rel="icon" type="image/png" href="assets/images/icon.png">
+<link rel="icon" type="image/png" href="{{asset('assets/images/icon.png')}}">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Quicksand:500,700" rel="stylesheet">
 
@@ -32,6 +32,8 @@
 <link rel="stylesheet" href="{{asset('files/bower_components/chartist/css/chartist.css')}}" type="text/css" media="all">
 <!-- Boostrap link -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
 
 <link rel="stylesheet" type="text/css" href="{{asset('files/assets/css/style.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('files/assets/css/widget.css')}}">
@@ -71,8 +73,8 @@
 <li class="user-profile header-notification">
 <div class="dropdown-primary dropdown">
 <div class="dropdown-toggle" data-toggle="dropdown">
-<img src="{{asset('files/assets/images/avatar-4.jpg')}}" class="img-radius" alt="User-Profile-Image">
-<span>John Doe</span>
+<img src="{{asset('files/assets/images/avatar.jpg')}}" class="img-radius" alt="User-Profile-Image">
+<span>{{Auth::user()->name}}</span>
 <i class="feather icon-chevron-down"></i>
 </div>
 <ul class="show-notification profile-notification dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">

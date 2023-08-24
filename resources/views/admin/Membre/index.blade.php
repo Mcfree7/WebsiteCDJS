@@ -26,19 +26,20 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($membre as $membre )
+        @if (!empty($membre) && $membre->count())
+            @foreach ($membre as $memb )
             <tr>
                 <td scope="col">{{$loop->index+1}}</td>
-                <td  scope="col">{{$membre->Nom}}</td>
-                <td  scope="col">{{$membre->Poste}}</td>
+                <td  scope="col">{{$memb->Nom}}</td>
+                <td  scope="col">{{$memb->Poste}}</td>
                 
                 <td scope="col">
-                    <img src="membres/{{$membre->Image}}" alt="" srcset="" class="rounded-circle" width="60" height="60">
+                    <img src="membres/{{$memb->Image}}" alt="" srcset="" class="rounded-circle" width="60" height="60">
                 </td>
                 <td scope="col">
-                    <a href="{{ route('membre.edit', $membre)}}"class="btn btn-info">Edit</a>
+                    <a href="{{ route('membre.edit', $memb->id)}}"class="btn btn-info">Edit</a>
 
-                    <form method="POST" class="d-inline" action="{{ route('membre.destroy', $membre)}}" >
+                    <form method="POST" class="d-inline" action="{{ route('membre.destroy', $memb->id)}}" >
                                   <!-- CSRF token -->
                                   @csrf
                                   <!-- <input type="hidden" name="_method" value="DELETE"> -->
@@ -48,8 +49,14 @@
                 </td>
             </tr>
             @endforeach
+            @else
+                <tr>
+                    <td colspan="6">liste vide. </td>
+                </tr>
+            @endif
         </tbody>
     </table>
+    <div class="row">{{ $membre->links() }}</div>
 </div>
 </center>
 @endsection

@@ -3,10 +3,10 @@
 <section class="uni-banner">
 <div class="container">
 <div class="uni-banner-text-area">
-<h1>Nos Activités sportives</h1>
+<h1>Nos Activités</h1>
 <ul>
 <li><a href="{{ route('acceuil') }}">Acceuil</a></li>
-<li>Activités_sports</li>
+<li>Activités</li>
 </ul>
 </div>
 </div>
@@ -16,7 +16,7 @@
 <section class="blog-details pt-70 pb-100">
 <div class="container">
 <div class="row ">
-@if(!empty($activit) && $activit->count())
+@if(!empty($activit) && $activit->count()) 
 @foreach ($activit as $activity)
 <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
     <div class="blog-card">
@@ -26,7 +26,7 @@
     <div class="service-card-text">
         <div class="blog-date mb-3">
         <ul>
-        <li><i class="fas fa-user"></i>publié par<a href="posted-by.html">Admin</a></li>
+        <li><i class="fas fa-user"></i>publié par<a href="#">Admin</a></li>
         <li><i class="far fa-calendar-alt"></i> {{$activity->Date}} </li>
         </ul>
         </div>
@@ -41,7 +41,10 @@
     <center><h5>Aucune activité disponible pour cette catégorie</h5></center>
 @endif
 </div>
-<div class="row mt-30">{{ $activit->links() }}</div>
+
+<div class="row mt-30 ml-30">    
+    {{ $activit->links() }} 
+</div>
 </div>
 </section>
 @endsection

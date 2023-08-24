@@ -79,13 +79,14 @@ Le Centre de Developpement de la Jeunesse et du Sports de la CEDEAO Le Centre de
     <div class="why-we-text-area">
     <div class="default-section-title">
     <span>QUI SOMMES NOUS?</span>
-    <h3>ECOWAS/YSDC--CEDEAO/CDJS </h3> <p> C'est une agence spécialisée du
+    <h3>ECOWAS/YSDC-CEDEAO/CDJS </h3> <p> C'est une agence spécialisée du
     Communauté des États de l'Afrique de l'Ouest chargée de la jeunesse et des sports dans la sous-région ouest-africaine. Il s'agit d'un cadre institutionnel permanent au sein de la communauté à travers lequel les activités juvéniles et sportives peuvent être développées et promues afin d'assurer l'engagement des jeunes dans le processus d'intégration.</p>
     </div>
     <div class="why-we-text-list">
     <i class="flaticon-government-building"></i>
     <h4>Notre Mission:</h4>
-    <p>Le Centre de Développement de la Jeunesse et des Sports de la CEDEAO oeuvre pour une jeunesse consciente, unie et épanouie dans le developpement futur de la sous-région</p>
+    <p>Les Chefs d’Etats et de Gouvernement, en créant le Centre de Développement de la Jeunesse et des Sports de la CEDEAO, lui ont assigné comme mission principale:
+Celle d’Initier, d’élaborer, de coordonner, de suivre, et de mettre en œuvre, des programmes relatifs au développement de la jeunesse au sein de la communauté</p>
     <ul>
     <li>Paix et Cohésion sociale.</li>
     <li>Unité Régionale</li>
@@ -248,7 +249,7 @@ Le Centre de Developpement de la Jeunesse et du Sports de la CEDEAO Le Centre de
                     <ul>
                     <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
                     <li><a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
-                    <li><a href="#/" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
                     <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
                     </ul>
                     </div>

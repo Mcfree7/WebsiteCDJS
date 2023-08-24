@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ArticleController extends Controller
 {
@@ -12,8 +13,8 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        return view('admin.article.index',['articles'=>Article::latest()->get()
-        ]);
+        $articles = DB::table('articles')->orderBy('id','desc')->paginate(5);
+        return view('admin.article.index',compact('articles'));
     }
 
     /**
@@ -72,9 +73,9 @@ class ArticleController extends Controller
 
     public function affiche(){
         
-        $article= Article::latest()->get();
+        $articles= DB::table('articles')->orderBy('id','desc')->paginate(3);
 
-        return view('pages.article.allarticles',compact('article'));
+        return view('pages.article.allarticles',compact('articles'));
 
     }
 

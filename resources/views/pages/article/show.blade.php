@@ -26,7 +26,7 @@
 </ul>
 </div>
 <h3 class="mt-0">{{$article->Titre}}</h3>
-<p>{{$article->Contenu}}</p>
+{{nl2br($article->Contenu)}}
 </div>
 </div>
 
@@ -37,16 +37,16 @@
 <ul>
 <li><a href="{{ route('article.affiche') }}"><i class="fas fa-angle-right"></i> Les Articles</a></li>
 <li><a href="#"><i class="fas fa-angle-right"></i> Les Offres</a></li>
-<li><a href="#"><i class="fas fa-angle-right"></i> Les Activités</a></li>
-<li><a href="#"><i class="fas fa-angle-right"></i> Galérie</a></li>
+<li><a href="{{ route('activity.all') }}"><i class="fas fa-angle-right"></i> Les Activités</a></li>
+<li><a href="{{ route('photo.affiche') }}"><i class="fas fa-angle-right"></i> Galérie</a></li>
 </ul>
 </div>
 <div class="sidebar-card recent-news mt-30">
 <h3>Articles récents</h3>
 @foreach ($ar as $ar)
 <div class="recent-news-card">
-<a href="#"><img src="{{asset('articles/'.$ar->Image)}}" alt="image" class="rounded-square"></a>
-<h><b><a href="{{ route('article.detail', $ar)}}">{{ucwords(strtolower(substr($ar->Titre,0,40)))}}...</a></b></h6>
+<a href="{{asset('articles/'.$ar->Image)}}"><img src="{{asset('articles/'.$ar->Image)}}" alt="image" class="rounded-square"></a>
+<h><b><a href="{{ route('article.detail', $ar)}}">{{ucwords(strtolower(substr($ar->Titre,0,25)))}}...</a></b></h6>
 <p>{{$ar->Date}}</p>
 </div>
 @endforeach

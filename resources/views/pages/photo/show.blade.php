@@ -7,7 +7,7 @@
 <div class="uni-banner-text-area">
 <h1>Détail de photo</h1>
 <ul>
-<li><a href="#">Galérie</a></li>
+<li><a href="{{ route('photo.affiche') }}">Galérie</a></li>
 <li>Details Photo </li>
 </ul>
 </div>

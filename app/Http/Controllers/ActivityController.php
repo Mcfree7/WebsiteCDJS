@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Activite;
 use Illuminate\Http\Request;
 use Illuminate\Notifications\Action;
+use Illuminate\Support\Facades\DB;
 
 class ActivityController extends Controller
 {
@@ -13,8 +14,8 @@ class ActivityController extends Controller
      */
     public function index()
     {
-        $activity = Activite::latest()->get();
-        return view('admin.activity.index', compact('activity'));
+        $activit = DB::table('activites')->orderBy('id','desc')->paginate(4);
+        return view('admin.activity.index', compact('activit'));
     }
 
     /**
@@ -70,26 +71,32 @@ class ActivityController extends Controller
     }
 
     ///fonction pour route hors middleware
+    public function allact()
+    {
+        $activit = DB::table('activites')->orderBy('id','desc')->paginate(3);
+        return view('pages.activity.allactivity', compact('activit'));
+    }
     public function detail(Activite $activite)
     {
         $activity = Activite::where('id',$activite->id)->first();
         $act= Activite::latest()->take(4)->get();
         return view('pages.activity.show', compact('activity','act'));
     }
+
     public function sport(Activite $activite)
     {
-        $activity = Activite::where('Categorie','Sport')->get();
-        return view('pages.activity.allsport', compact('activity'));
+        $activit = Activite::where('Categorie','Sport')->paginate(3);
+        return view('pages.activity.allsport', compact('activit'));
     }  
     public function volontaire(Activite $activite)
     {
-        $activity = Activite::where('Categorie','Volontariat')->get();
-        return view('pages.activity.allsport', compact('activity'));
+        $activit = Activite::where('Categorie','Volontariat')->paginate(3);
+        return view('pages.activity.allvolontaire', compact('activit'));
     }  
     public function jeunesse(Activite $activite)
     {
-        $activity = Activite::where('Categorie','Jeunesse')->get();
-        return view('pages.activity.allsport', compact('activity'));
+        $activit = Activite::where('Categorie','Jeunesse')->paginate(3);
+        return view('pages.activity.allsport', compact('activit'));
     }
     /**
      * Show the form for editing the specified resource.
@@ -112,7 +119,7 @@ class ActivityController extends Controller
             'categorie' => 'required',
             'status' => 'required',
             'date' => 'required',
-            'image'=> 'required|mimes:jpeg,jpg,png|max:5000|dimensions:width=900,height=650'
+            'image'=> 'nullable|mimes:jpeg,jpg,png|max:5000|dimensions:width=900,height=650'
 
         ]);
 

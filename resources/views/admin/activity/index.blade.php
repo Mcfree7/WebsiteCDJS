@@ -25,35 +25,43 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($activity as $activity )
-            <tr>
-                <td scope="col">{{$loop->index+1}}</td>
-                <td  scope="col">{{ucwords(strtolower(substr($activity->Titre,0,25)))}}</td>
-                <td  scope="col">{{$activity->Categorie}}</td>
-                <td scope="col">
-                    <img src="activités/{{$activity->Image}}" alt="" srcset="" class="rounded-circle" width="60" height="60">
-                </td>
-                <td scope="col">
-                    <a href="{{ route('activite.edit', $activity) }}" class="btn btn-info">Edit</a>
+        @if (!empty($activit) && $activit->count())
+            
+            @foreach ($activit as $activity )
+                <tr>
+                    <td scope="col">{{$loop->index+1}}</td>
+                    <td  scope="col">{{ucwords(strtolower(substr($activity->Titre,0,25)))}}</td>
+                    <td  scope="col">{{$activity->Categorie}}</td>
+                    <td scope="col">
+                        <img src="activités/{{$activity->Image}}" alt="" srcset="" class="rounded-circle" width="60" height="60">
+                    </td>
+                    <td scope="col">
+                        <a href="{{ route('activite.edit', $activity->id) }}" class="btn btn-info">Edit</a>
 
-                    <form method="POST" class="d-inline" action="{{ route('activite.destroy', $activity)}}" >
-                                  <!-- CSRF token -->
-                                  @csrf
-                                  <!-- <input type="hidden" name="_method" value="DELETE"> -->
-                                  @method("DELETE")
-                                  <button type="submit"class="btn btn-danger">Delete</button>
-                    </form> 
-                    <form method="GET" class="d-inline" action="{{ route('activite.show', $activity)}}" enctype="multipart/form-data" >
-                                
-                                  <!-- CSRF token -->
-                                  <!-- <input type="hidden" name="_method" value="DELETE"> -->
-                                <button type="submit"class="btn btn-secondary">show</button>
-                    </form>
-                </td>
-            </tr>
+                        <form method="POST" class="d-inline" action="{{ route('activite.destroy', $activity->id)}}" >
+                                    <!-- CSRF token -->
+                                    @csrf
+                                    <!-- <input type="hidden" name="_method" value="DELETE"> -->
+                                    @method("DELETE")
+                                    <button type="submit"class="btn btn-danger">Delete</button>
+                        </form> 
+                        <form method="GET" class="d-inline" action="{{ route('activite.show', $activity->id)}}" enctype="multipart/form-data" >
+                                    
+                                    <!-- CSRF token -->
+                                    <!-- <input type="hidden" name="_method" value="DELETE"> -->
+                                    <button type="submit"class="btn btn-secondary">show</button>
+                        </form>
+                    </td>
+                </tr>
             @endforeach
+        @else
+                <tr>
+                    <td colspan="6">liste vide. </td>
+                </tr>
+         @endif
         </tbody>
     </table>
+    <div class="row mt-30">{{ $activit->links() }}</div>
 </div>
 </center>
 @endsection

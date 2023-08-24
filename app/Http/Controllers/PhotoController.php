@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Photo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PhotoController extends Controller
 {
@@ -12,8 +13,9 @@ class PhotoController extends Controller
      */
     public function index()
     {
-        $photo = Photo::latest()->get();
-        return view('admin.photo.index', compact('photo'));
+        
+        $photos = DB::table('photos')->orderBy('id','desc')->paginate(5);
+        return view('admin.photo.index', compact('photos'));
     }
 
     /**
@@ -57,7 +59,14 @@ class PhotoController extends Controller
 
     /**
      * Display the specified resource.
+     * 
      */
+
+     public function affiche()
+     {
+        $photos = DB::table('photos')->orderBy('id','desc')->paginate(3);
+        return view('pages.photo.allphoto',compact('photos'));
+     }
     public function show(Photo $photo)
     {
         $photo = Photo::where('id',$photo->id)->first();

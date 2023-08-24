@@ -32,8 +32,8 @@
 <div class="col-lg-6 col-md-12 col-sm-12 col-12">
 <div class="topbar-left-area">
 <ul>
-<li><a href="mailto:cdjs@ecowas.int?cc=cdjs@fasonet.bf &subject= Mail from Website "><i class="fas fa-envelope"></i> <span class="__cf_email__" data-cfemail="bccfc9ccccd3cec8fcd1d9d8c6d392dfd3d1">cdjs@ecowas.int</span></a></li>
-<li><a href="https://goo.gl/maps/T3S78DrzqMegjsLy6"><i class="fas fa-map-marker-alt"></i> 01 BP 5559 Ouagadougou 01- Burkina Faso</a></li>
+<li><a href="mailto:cdjs@ecowas.int?cc=cdjs@fasonet.bf &subject= Message venant du site web CDJS "><i class="fas fa-envelope"></i> <span class="__cf_email__" data-cfemail="bccfc9ccccd3cec8fcd1d9d8c6d392dfd3d1">cdjs@ecowas.int</span></a></li>
+<li><a href="https://goo.gl/maps/KpjQNQafUV4XaFZB7"><i class="fas fa-map-marker-alt"></i> 01 BP 5559 Ouagadougou 01- Burkina Faso</a></li>
 </ul>
 </div>
 </div>
@@ -113,7 +113,7 @@
 <a href="{{ route('propos')}}" class="nav-link ">A propos</a>
 </li>
 <li class="nav-item">
-<a href="#" class="nav-link dropdown-toggle">Activités</a>
+<a href="{{ route('activity.all') }}" class="nav-link dropdown-toggle">Activités</a>
 <ul class="dropdown-menu">
 <li class="nav-item"><a href="{{ route('activity.sport')}}" class="nav-link">sport</a></li>
 <li class="nav-item"><a href="{{ route('activity.jeunesse')}}" class="nav-link">jeunesse</a></li>
@@ -125,11 +125,12 @@
 <ul class="dropdown-menu">
     <li class="nav-item"><a href="{{ route('article.affiche') }}" class="nav-link">Articles</a></li>
     <li class="nav-item"><a href="#" class="nav-link">Flash News</a></li>
+    <li class="nav-item"><a href="{{ route('photo.affiche') }}" class="nav-link">Galérie</a></li>
     <li class="nav-item"><a href="#" class="nav-link">offres</a></li>
 </ul>
 </li>
 <li class="nav-item">
-<a href="#" class="nav-link ">Membres</a>
+<a href="{{ route('membre.affiche') }}" class="nav-link ">Membres</a>
 </li>
 <li class="nav-item">
 <a href="#" class="nav-link dropdown-toggle">Filliales</a>
@@ -145,7 +146,7 @@
 <li></li>
 <li></li>
 <li></li>
-<li><a class="default-button" href="contact.html">Contactez-nous</a></li>
+<li><a class="default-button" href="{{ route('contact') }}">Contactez-nous</a></li>
 </ul>
 </div>
 </nav>
@@ -180,12 +181,12 @@
 <div class="footer-contact-card">
 <i class="fas fa-map-marker-alt"></i>
 <h5>Adresse </h5>
-<p><a href="https://goo.gl/maps/bc3qza49szqGNZt86" target="_blank">Ouagadougou,Burkina Faso</a></p>
+<p><a href="https://goo.gl/maps/KpjQNQafUV4XaFZB7" target="_blank">Avenue des Martyrs, Patte d´oie, Ouagadougou</a></p>
 </div>
 <div class="footer-contact-card">
 <i class="fas fa-envelope"></i>
 <h5>Email: </h5>
-<p><a href=""><span class="__cf_email__" data-cfemail="31424441415e4345715c54554b5e1f525e5c">cdjs@fasonet.bf</span></a></p>
+<p><a href="mailto:mailto:cdjs@ecowas.int?cc=cdjs@fasonet.bf &subject= Message venant du site web CDJS"><span >cdjs@fasonet.bf</span></a></p>
 </div>
 <div class="footer-contact-card">
 <i class="fas fa-phone-alt"></i>
@@ -198,11 +199,11 @@
 <div class="footer-links footer-quick-links">
 <h3>Liens utiles</h3>
 <ul>
-<li><i class="fas fa-angle-right"></i> <a href="services.html">A propos</a> </li>
-<li><i class="fas fa-angle-right"></i> <a href="tetrms.html">Nos articles</a></li>
-<li><i class="fas fa-angle-right"></i> <a href="privacy.html">Galérie</a></li>
-<li><i class="fas fa-angle-right"></i> <a href="privacy.html">Activités</a></li>
-<li><i class="fas fa-angle-right"></i> <a href="events.html">Membres</a></li>
+<li><i class="fas fa-angle-right"></i> <a href="{{route('propos')}}">A propos</a> </li>
+<li><i class="fas fa-angle-right"></i> <a href="{{route('article.affiche')}}">Nos articles</a></li>
+<li><i class="fas fa-angle-right"></i> <a href="{{route('photo.affiche')}}">Galérie</a></li>
+<li><i class="fas fa-angle-right"></i> <a href="{{route('activity.all')}}">Activités</a></li>
+<li><i class="fas fa-angle-right"></i> <a href="{{route('membre.affiche')}}">Membres</a></li>
 </ul>
 </div>
 </div>
@@ -210,9 +211,8 @@
 <div class="footer-links footer-newsletter">
 <h3>Message</h3>
 <p>Laissez nous vos suggestions et critiques!</p>
-<form class="newsletter-form" data-toggle="validator">
-<input type="email" class="input-newsletter form-control" placeholder="Your Email" name="EMAIL" required autocomplete="off">
-<button class="default-button news-btn">envoyer</button>
+<form href="mailto:cdjs@ecowas.int?cc=cdjs@fasonet.bf &subject= Mail from Website" class="newsletter-form" data-toggle="validator">
+<button class="default-button news-btn" type="submit"><a href="mailto:mailto:cdjs@ecowas.int?cc=cdjs@fasonet.bf &subject= Message venant du site web CDJS">Ecrire le message</a></button>
 <div id="validator-newsletter" class="form-result"></div>
 </form>
 </div>

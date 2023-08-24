@@ -6,7 +6,7 @@
 <div class="uni-banner-text-area">
 <h1>Details de l'activité</h1>
 <ul>
-<li><a href="#">Activités</a></li>
+<li><a href="{{ route('activity.all') }}">Activités</a></li>
 <li>Détails Activité</li>
 </ul>
 </div>
@@ -36,17 +36,17 @@
 <h3>Liens importants</h3>
 <ul>
 <li><a href="{{ route('activity.sport')}}"><i class="fas fa-angle-right"></i> Activités sportives</a></li>
-<li><a href="#"><i class="fas fa-angle-right"></i> activités jeunesse</a></li>
-<li><a href="#"><i class="fas fa-angle-right"></i> Activités volontariat</a></li>
-<li><a href="#"><i class="fas fa-angle-right"></i> les articles</a></li>
+<li><a href="{{ route('activity.jeunesse')}}"><i class="fas fa-angle-right"></i> activités jeunesse</a></li>
+<li><a href="{{ route('activity.volontaire')}}"><i class="fas fa-angle-right"></i> Activités volontariat</a></li>
+<li><a href="{{route('article.affiche')}}"><i class="fas fa-angle-right"></i> les articles</a></li>
 </ul>
 </div>
 <div class="sidebar-card recent-news mt-30">
-<h3>Articles récents</h3>
+<h3>Activités récentes</h3>
 @foreach ($act as $act)
 <div class="recent-news-card">
 <a href="#"><img src="{{asset('activités/'.$act->Image)}}" alt="image" class="rounded-square"></a>
-<h><b><a href="{{ route('activity.detail', $act)}}">{{ucwords(strtolower(substr($act->Titre,0,40)))}}...</a></b></h6>
+<h><b><a href="{{ route('activity.detail', $act)}}">{{ucwords(strtolower(substr($act->Titre,0,25)))}}...</a></b></h6>
 <p>{{$act->Date}}</p>
 </div>
 @endforeach

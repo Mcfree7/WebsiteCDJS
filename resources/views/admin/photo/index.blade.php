@@ -22,7 +22,8 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($photo as $photo )
+        @if (!empty($photos) && $photos->count())
+            @foreach ($photos as $photo )
             <tr>
                 <td scope="col">{{$loop->index+1}}</td>
                 <td  scope="col">{{ucwords(strtolower(substr($photo->Titre,0,25)))}}</td>
@@ -31,16 +32,16 @@
                     <img src="photos/{{$photo->Image}}" alt="" srcset="" class="rounded-circle" width="60" height="60">
                 </td>
                 <td scope="col">
-                    <a href="{{ route('photo.edit', $photo)}}"class="btn btn-info">Edit</a>
+                    <a href="{{ route('photo.edit', $photo->id)}}"class="btn btn-info">Edit</a>
 
-                    <form method="POST" class="d-inline" action="{{ route('photo.destroy', $photo)}}" >
+                    <form method="POST" class="d-inline" action="{{ route('photo.destroy', $photo->id)}}" >
                                   <!-- CSRF token -->
                                   @csrf
                                   <!-- <input type="hidden" name="_method" value="DELETE"> -->
                                   @method("DELETE")
                                   <button type="submit"class="btn btn-danger">Delete</button>
                     </form> 
-                    <form method="GET" class="d-inline" action="{{ route('photo.show', $photo)}}" enctype="multipart/form-data" >
+                    <form method="GET" class="d-inline" action="{{ route('photo.show', $photo->id)}}" enctype="multipart/form-data" >
                                 
                                   <!-- CSRF token -->
                                   <!-- <input type="hidden" name="_method" value="DELETE"> -->
@@ -49,8 +50,14 @@
                 </td>
             </tr>
             @endforeach
+            @else
+                <tr>
+                    <td colspan="6">liste vide. </td>
+                </tr>
+            @endif
         </tbody>
     </table>
+    <div class="row">{{ $photos->links() }}</div>
 </div>
 </center>
 @endsection

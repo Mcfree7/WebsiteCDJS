@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Membre;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class MembreController extends Controller
 {
@@ -12,7 +14,7 @@ class MembreController extends Controller
      */
     public function index()
     {
-        $membre = Membre::latest()->get();
+        $membre = DB::table('membres')->orderBy('id','desc')->paginate(5);
         return view('admin.Membre.index',compact('membre'));
     }
 
@@ -56,7 +58,11 @@ class MembreController extends Controller
     {
         //
     }
-
+    public function affiche()
+    {
+        $membres = DB::table('membres')->orderBy('id','desc')->paginate(4);
+        return view('pages.Membre.allmembre',compact('membres'));
+    }
     /**
      * Show the form for editing the specified resource.
      */
@@ -76,7 +82,7 @@ class MembreController extends Controller
 
             'nom'=> 'required',
             'poste'=> 'required',
-            'image'=> 'required|mimes:jpeg,jpg,png|max:5000|dimensions:width=600,height=600',
+            'image'=> 'nullable|mimes:jpeg,jpg,png|max:5000|dimensions:width=600,height=600',
         ]);
         $membre = Membre::where('id',$membre->id)->first();
         //upload image

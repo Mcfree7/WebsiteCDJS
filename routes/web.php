@@ -10,7 +10,9 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\MembreController;
+use App\Http\Controllers\OffreController;
 use App\Models\Membre;
+use App\Models\Offre;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,7 +31,6 @@ Auth::routes();
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('A_propos', [ProposController::class, 'index'])->name('propos');
 Route::get('Contactez_nous', [ContactController::class, 'index'])->name('contact');
-
 //details routes
 Route::get('/All_articles', [ArticleController::class, 'affiche'])->name('article.affiche');
 Route::get('article_detail/{article}', [ArticleController::class, 'detail'])->name('article.detail');
@@ -39,7 +40,10 @@ Route::get('/All_activities', [ActivityController::class, 'allact'])->name('acti
 Route::get('/All_Sport_activities', [ActivityController::class, 'sport'])->name('activity.sport');
 Route::get('/All_volunteers_activities', [ActivityController::class, 'volontaire'])->name('activity.volontaire');
 Route::get('/All_young_activities', [ActivityController::class, 'jeunesse'])->name('activity.jeunesse');
- 
+ //offres routes
+ Route::get('/all_offres', [OffreController::class, 'index2'])->name('offre.index2');
+ Route::get('detail/{offre}', [OffreController::class, 'detail'])->name('offre.detail');
+
 //photo routes
 Route::get('photo_detail/{photo}', [PhotoController::class, 'detail'])->name('photo.detail');
 Route::get('Galérie', [PhotoController::class, 'affiche'])->name('photo.affiche');
@@ -52,4 +56,5 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('photo', PhotoController::class);
     Route::resource('activite', ActivityController::class);
     Route::resource('membre', MembreController::class);
+    Route::resource('offre', OffreController::class);
 });

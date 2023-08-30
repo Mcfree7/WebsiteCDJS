@@ -11,7 +11,7 @@
 @endif
 <div class="container col-md-9 p-5 mr-5 ">
     <div class="text-right">
-        <a href="{{ route('activite.create') }}" class="btn btn-dark mt-2">Nouveau article</a>
+        <a href="{{ route('activite.create') }}" class="btn btn-dark mt-2">Nouvelle activité</a>
     </div>
 
     <table class="table mt-2">

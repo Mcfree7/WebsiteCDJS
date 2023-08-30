@@ -16,9 +16,9 @@
         <div class="page-header-breadcrumb">
         <ul class=" breadcrumb breadcrumb-title">
         <li class="breadcrumb-item">
-        <a href="index.html"><i class="feather icon-home"></i></a>
+        <a href="{{route('home')}}"><i class="feather icon-home"></i></a>
         </li>
-        <li class="breadcrumb-item"><a href="#!">Articles</a> </li>
+        <li class="breadcrumb-item"><a href="{{route('home')}}">Articles</a> </li>
         </ul>
         </div>
         </div>

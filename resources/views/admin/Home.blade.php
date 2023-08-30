@@ -19,34 +19,30 @@
         <div class="page-header-breadcrumb">
         <ul class=" breadcrumb breadcrumb-title">
         <li class="breadcrumb-item">
-        <a href="index.html"><i class="feather icon-home"></i></a>
+        <a href="{{route('home')}}"><i class="feather icon-home"></i></a>
         </li>
-        <li class="breadcrumb-item"><a href="#!">Acceuil</a> </li>
+        <li class="breadcrumb-item"><a href="{{route('home')}}">Acceuil</a> </li>
         </ul>
         </div>
         </div>
         </div>
         </div>
     </div>
-    <div id="carouselExample" class="carousel slide">
+  <center><div class="container col-md-9 mr-5 p-5">
+
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="assets/images/why-we/w1.jpg" class="d-block w-100" alt="...">
+      <img src="assets/images/blog/act_jeunes.jpg" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="assets/images/why-we/w1.jpg" class="d-block w-100" alt="...">
+      <img src="assets/images/blog/act_volontariat.jpg" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="assets/images/why-we/w1.jpg" class="d-block w-100" alt="...">
+      <img src="assets/images/service/serv8.jpg" class="d-block w-100" alt="...">
     </div>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
 </div>
+</div>
+</center>
 @endsection

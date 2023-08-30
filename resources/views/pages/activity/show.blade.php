@@ -26,7 +26,7 @@
 </ul>
 </div>
 <h3 class="mt-0">{{$activity->Titre}}</h3>
-<p>{{$activity->Contenu}}</p>
+<p style="white-space: pre-wrap; word-wrap: break-word;">{{$activity->Contenu}}</p>
 </div>
 </div>
 
@@ -45,7 +45,7 @@
 <h3>Activités récentes</h3>
 @foreach ($act as $act)
 <div class="recent-news-card">
-<a href="#"><img src="{{asset('activités/'.$act->Image)}}" alt="image" class="rounded-square"></a>
+<a href="{{ route('activity.detail', $act)}}"><img src="{{asset('activités/'.$act->Image)}}" alt="image" class="rounded-square"></a>
 <h><b><a href="{{ route('activity.detail', $act)}}">{{ucwords(strtolower(substr($act->Titre,0,25)))}}...</a></b></h6>
 <p>{{$act->Date}}</p>
 </div>

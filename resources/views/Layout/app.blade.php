@@ -46,12 +46,12 @@
     @endif
     @else
         <li class="nav-item dropdown">
-            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" >
                                     {{ Auth::user()->name }} 
             </a>
 
-         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="{{ route('home') }}">
+         <div class="dropdown-menu dropdown-menu-end" >
+            <a class="dropdown-item" target="_blank" href="{{ route('home') }}">
             {{ __('Admin') }}   
             </a>
             <a class="dropdown-item" href="{{ route('logout') }}"
@@ -124,9 +124,8 @@
 <a href="#" class="nav-link dropdown-toggle">Publications</a>
 <ul class="dropdown-menu">
     <li class="nav-item"><a href="{{ route('article.affiche') }}" class="nav-link">Articles</a></li>
-    <li class="nav-item"><a href="#" class="nav-link">Flash News</a></li>
     <li class="nav-item"><a href="{{ route('photo.affiche') }}" class="nav-link">Galérie</a></li>
-    <li class="nav-item"><a href="#" class="nav-link">offres</a></li>
+    <li class="nav-item"><a href="{{route('offre.index2') }}" class="nav-link">offres</a></li>
 </ul>
 </li>
 <li class="nav-item">
@@ -163,14 +162,15 @@
 <div class="col-lg-3 col-md-6 col-sm-6 col-12">
 <div class="footer-logo-area">
 <a href="{{ route('acceuil') }}"><img src="{{asset('assets/images/logoO2.png')}}" alt="image"></a>
-<p>Le Centre de Developpement de la Jeunesse et du Sports de la CEDEAO Le Centre de Developpement de la Jeunesse et du Sports de la CEDEAO</p>
+<p>Le Centre de Developpement de la Jeunesse et du Sports de la CEDEAO.C'est une agence spécialisée du
+    Communauté des États de l'Afrique de l'Ouest chargée de la jeunesse et des sports dans la sous-région ouest-africaine</p>
 <div class="footer-social-area">
 <ul>
-<li><span>Follow Us: </span></li>
+<li><span>Suivez nous: </span></li>
 <li><a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-<li><a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+<li><a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
 <li><a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a></li>
-<li><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
 </ul>
 </div>
 </div>

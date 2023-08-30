@@ -26,17 +26,18 @@
 </ul>
 </div>
 <h3 class="mt-0">{{$article->Titre}}</h3>
-{{nl2br($article->Contenu)}}
+<p style="white-space: pre-wrap; word-wrap: break-word;">{{($article->Contenu)}}</p>
+
 </div>
 </div>
 
 <div class="col-lg-4">
 <div class="sidebar-area pl-20 pt-30">
-<div class="sidebar-card sidebar-category mt-30">
+<div class="sidebar-card sidebar-category mt-10">
 <h3>Liens importants</h3>
 <ul>
 <li><a href="{{ route('article.affiche') }}"><i class="fas fa-angle-right"></i> Les Articles</a></li>
-<li><a href="#"><i class="fas fa-angle-right"></i> Les Offres</a></li>
+<li><a href="{{route('offre.index2') }}"><i class="fas fa-angle-right"></i> Les Offres</a></li>
 <li><a href="{{ route('activity.all') }}"><i class="fas fa-angle-right"></i> Les Activités</a></li>
 <li><a href="{{ route('photo.affiche') }}"><i class="fas fa-angle-right"></i> Galérie</a></li>
 </ul>

@@ -4,8 +4,7 @@
 <!-- Mirrored from demo.dashboardpack.com/admindek-html/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 26 Jul 2023 11:35:45 GMT -->
 <head>
 <title>Panneau Administration</title>
-
-
+<script src="{{asset('ckeditor/ckeditor.js')}}"></script>
 <!--[if lt IE 10]>
 		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -49,53 +48,54 @@
 <div class="pcoded-container navbar-wrapper">
 
 <nav class="navbar header-navbar pcoded-header">
-<div class="navbar-wrapper">
-<div class="navbar-logo">
-<a href="{{ route('acceuil') }}">
-<img class="img-fluid" src="{{asset('files/assets/images/logo_CDJS.png')}}" alt="Theme-Logo" />
-</a>
-<a class="mobile-menu" id="mobile-collapse" href="#!">
-<i class="feather icon-menu icon-toggle-right"></i>
-</a>
-<a class="mobile-options waves-effect waves-light">
-<i class="feather icon-more-horizontal"></i>
-</a>
-</div>
-<div class="navbar-container container-fluid">
-<ul class="nav-left">
-<li>
-<a href="#!" onclick="javascript:toggleFullScreen()" class="waves-effect waves-light">
-<i class="full-screen feather icon-maximize"></i>
-</a>
-</li>
-</ul>
-<ul class="nav-right">
-<li class="user-profile header-notification">
-<div class="dropdown-primary dropdown">
-<div class="dropdown-toggle" data-toggle="dropdown">
-<img src="{{asset('files/assets/images/avatar.jpg')}}" class="img-radius" alt="User-Profile-Image">
-<span>{{Auth::user()->name}}</span>
-<i class="feather icon-chevron-down"></i>
-</div>
-<ul class="show-notification profile-notification dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
-<li>
-    <a class="dropdown-item" href="{{ route('logout') }}"
-                onclick="event.preventDefault();
-                    document.getElementById('logout-form').submit();"><i class="feather icon-log-out"></i>
-                        {{ __('Logout') }}
+    <div class="navbar-wrapper">
+    <div class="navbar-logo">
+    <a href="{{ route('acceuil') }}">
+    <img class="img-fluid" src="{{asset('files/assets/images/logo_CDJS.png')}}" alt="Theme-Logo" />
     </a>
+    <a class="mobile-menu" id="mobile-collapse" href="#!">
+    <i class="feather icon-menu icon-toggle-right"></i>
+    </a>
+    <a class="mobile-options waves-effect waves-light">
+    <i class="feather icon-more-horizontal"></i>
+    </a>
+    </div>
+    <div class="navbar-container container-fluid">
+    <ul class="nav-left">
+    <li>
+    <a href="#!" onclick="javascript:toggleFullScreen()" class="waves-effect waves-light">
+    <i class="full-screen feather icon-maximize"></i>
+    </a>
+    </li>
+    </ul>
+    <ul class="nav-right">
+    <li class="user-profile header-notification">
+    <div class="dropdown-primary dropdown">
+    <div class="dropdown-toggle" data-toggle="dropdown">
+    <img src="{{asset('files/assets/images/avatar.jpg')}}" class="img-radius" alt="User-Profile-Image">
+    <span>{{Auth::user()->name}}</span>
+    <i class="feather icon-chevron-down"></i>
+    </div>
+    <ul class="show-notification profile-notification dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+    <li>
+        <a class="dropdown-item" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();"><i class="feather icon-log-out"></i>
+                            {{ __('Logout') }}
+        </a>
 
-    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-        @csrf
-    </form>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+            @csrf
+        </form>
+    </li>
+    </ul>
+    </div>
+    </li>
+    </ul>
+    </div>
+    </div>
 </nav>
+
 <div class="pcoded-main-container">
 <div class="pcoded-wrapper">
 
@@ -112,7 +112,7 @@
     <ul class="pcoded-submenu">
     <li class="active">
     <a href="index.html" class="waves-effect waves-dark">
-    <span class="pcoded-mtext">Default</span>
+    <span class="pcoded-mtext">Acceuil</span>
     </a>
     </li>
     </ul>
@@ -151,40 +151,19 @@
             </a>
             <ul class="pcoded-submenu">
             <li class=" ">
-            <a href="#" class="waves-effect waves-dark">
+            <a href="{{route('offre.create')}}" class="waves-effect waves-dark">
             <span class="pcoded-mtext">Créer un nouveau</span>
             </a>
             </li>
             <li class=" ">
-            <a href="#" class="waves-effect waves-dark">
+            <a href="{{route('offre.index')}}" class="waves-effect waves-dark">
             <span class="pcoded-mtext">Afficher</span>
             </a>
             </li>
             </ul>
         </li>
     </ul>
-    <ul class="pcoded-item pcoded-left-item">
-        <li class="pcoded-hasmenu">
-            <a href="javascript:void(0)" class="waves-effect waves-dark">
-            <span class="pcoded-micon">
-            <i class="feather icon-clipboard"></i>
-            </span>
-            <span class="pcoded-mtext">News</span>
-            </a>
-            <ul class="pcoded-submenu">
-            <li class=" ">
-            <a href="#" class="waves-effect waves-dark">
-            <span class="pcoded-mtext">Créer un nouveau</span>
-            </a>
-            </li>
-            <li class=" ">
-            <a href="#" class="waves-effect waves-dark">
-            <span class="pcoded-mtext">Afficher</span>
-            </a>
-            </li>
-            </ul>
-        </li>
-    </ul>
+    
     <div class="pcoded-navigation-label">Gestion de la Galérie</div>
     <ul class="pcoded-item pcoded-left-item">
         <li class="pcoded-hasmenu">
@@ -255,8 +234,9 @@
         </li>
     </ul>
 </nav>
+
 @yield('content')
-</div>
+
 </div>
 </div>
 </div>
@@ -313,6 +293,9 @@
 <![endif]-->
 
 <!-- boostrap link -->
+<script>
+        CKEDITOR.replace( 'contenu' );
+</script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
 <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript" src="{{asset('files/bower_components/jquery/js/jquery.min.js')}}"></script>
@@ -339,6 +322,8 @@
 <script src="{{asset('files/assets/js/vertical/vertical-layout.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('files/assets/pages/dashboard/custom-dashboard.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('files/assets/js/script.min.js')}}"></script>
+
+
 </body>
 
 <!-- Mirrored from demo.dashboardpack.com/admindek-html/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 26 Jul 2023 11:36:36 GMT -->

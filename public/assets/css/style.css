@@ -267,12 +267,17 @@ Topbar Area CSS
 
 .topbar-right-area ul li a {
   color: var(--whiteColor);
+}.topbar-right-area ul li a.dropdown-item {
+  color: black;
 }
 
 .topbar-right-area ul li i {
   font-size: 14px;
   margin-right: 3px;
   color: var(--mainColor) !important;
+}
+.dropdown-item { 
+  color: #000000;
 }
 
 /*================================================

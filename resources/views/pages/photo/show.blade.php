@@ -27,7 +27,7 @@
 <div class="col-lg-8">
 <div class="event-details details-text-area">
 <h3 class="mt-0">{{$photo->Titre}}</h3>
-<p>{{$photo->Contenu}}</p>
+<p style="white-space: pre-wrap; word-wrap: break-word;">{{$photo->Contenu}}</p>
 </div>
 </div>
 <div class="col-lg-4">

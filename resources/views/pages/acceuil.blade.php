@@ -17,16 +17,15 @@
 <div class="banner-text-area banner-text-area-1">
 <h6>A PROPOS DU CENTRE</h6>
 <h1>CDJS-EYSDC/CEDAO-ECOWAS</h1>
-<p>
-    
-Le Centre de Developpement de la Jeunesse et du Sports de la CEDEAO Le Centre de Developpement de la Jeunesse et du Sports de la CEDEAO Le Centre de Developpement de la Jeunesse et du Sports de la CEDEAO.</p>
+<p>Le Centre de Developpement de la Jeunesse et du Sports de la CEDEAO.C'est une agence spécialisée du
+    Communauté des États de l'Afrique de l'Ouest chargée de la jeunesse et des sports dans la sous-région ouest-africaine</p>
 <a class="default-button" href="{{ route('propos')}} ">En savoir plus...</a>
 </div>
 </div>
 <div class="col-lg-5">
 <div class="banner-img-area-1">
 <img src="assets/images/banner/banner_1.jpg" alt="image">
-<a class="video-popup" href="https://www.youtube.com/watch?v=ukfISpWHVWI"><i class="fas fa-play"></i></a>
+<a class="video-popup" href="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FCDJSCEDEAO%2Fvideos%2F1500674607130519%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"><i class="fas fa-play"></i></a>
 </div>
 </div>
 </div>
@@ -266,7 +265,5 @@ Celle d’Initier, d’élaborer, de coordonner, de suivre, et de mettre en œuv
     </div>
 </section>
 
-
-
-
 @endsection
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v17.0" nonce="a8S87tSm"></script>

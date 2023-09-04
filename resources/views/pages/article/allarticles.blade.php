@@ -21,7 +21,7 @@
     <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
     <div class="service-card">
     <div class="service-card-img">
-    <a href="service-detaisl.html"><img src="articles/{{$article->Image}}" alt="image"></a>
+    <a href="{{ route('article.detail', $article->id)}}"><img src="articles/{{$article->Image}}" alt="image"></a>
     </div>
     <div class="service-card-text">
     <div class="blog-date mb-3">

@@ -28,6 +28,7 @@
             <ul>
             <li><i class="fas fa-user"></i>publié par<a href="posted-by.html">Admin</a></li>
             <li><i class="far fa-calendar-alt"></i> {{$activity->Date}} </li>
+            <li> Statut : {{$activity->Status}} </li>
             </ul>
             </div>
             <h7><b><a href="{{ route('activity.detail', $activity->id)}}">{{ucwords(strtolower(substr($activity->Titre,0,30)))}}...</a></b></h7>

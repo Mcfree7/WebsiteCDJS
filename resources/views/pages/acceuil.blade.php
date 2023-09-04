@@ -5,10 +5,10 @@
 
 <div class="banner-social-icons">
 <ul>
-<li><a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-<li><a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
-<li><a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a></li>
-<li><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+<li><a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+<li><a href="#²&" target="_blank"><i class="fab fa-instagram"></i></a></li>
 </ul>
 </div>
 <div class="container-fluid">
@@ -16,7 +16,7 @@
 <div class="col-lg-7">
 <div class="banner-text-area banner-text-area-1">
 <h6>A PROPOS DU CENTRE</h6>
-<h1>CDJS-EYSDC/CEDAO-ECOWAS</h1>
+<h1>CDJS-CEDEAO/EYSDC</h1>
 <p>Le Centre de Developpement de la Jeunesse et du Sports de la CEDEAO.C'est une agence spécialisée du
     Communauté des États de l'Afrique de l'Ouest chargée de la jeunesse et des sports dans la sous-région ouest-africaine</p>
 <a class="default-button" href="{{ route('propos')}} ">En savoir plus...</a>
@@ -124,7 +124,7 @@ Celle d’Initier, d’élaborer, de coordonner, de suivre, et de mettre en œuv
     <div class="fun-facts-card">
     <i class="flaticon-park-1"></i>
     <h2>
-    <span class="odometer" data-count="">25</span>
+    <span class="odometer" data-count="{{date('Y')-2005}}">08</span>
     <span class="sign-icon">+</span>
     </h2>
     <p>Années d'existence</p>
@@ -134,7 +134,7 @@ Celle d’Initier, d’élaborer, de coordonner, de suivre, et de mettre en œuv
     <div class="fun-facts-card last-card">
     <i class="flaticon-award"></i>
     <h2>
-    <span class="odometer" data-count="100">00</span>
+    <span class="odometer" data-count="50">00</span>
     <span class="sign-icon">+</span>
     </h2>
     <p>Programmes Réussis</p>
@@ -187,7 +187,7 @@ Celle d’Initier, d’élaborer, de coordonner, de suivre, et de mettre en œuv
     <div class="blog-card-text-area">
     <h6><b><a href="{{ route('activity.jeunesse')}}">Les Activités de Jeunesse </a></b></h6>
     <p>Les Activités de Jeunesse sont les différentes activités mises en avant pour le developpement de la jeunesse</p>
-    <a class="read-more-btn" href="#">Afficher plus</a>
+    <a class="read-more-btn" href="{{ route('activity.jeunesse')}}">Afficher plus</a>
     </div>
     </div>
     </div>
@@ -217,7 +217,7 @@ Celle d’Initier, d’élaborer, de coordonner, de suivre, et de mettre en œuv
         <li>{{$photo->Categorie}}</li>
         <li>{{$photo->Date}}</li>
         </ul>
-        <h4><a href="{{ route('photo.detail', $photo)}}">{{$photo->Titre}}</a></h4>
+        <h4><a href="{{ route('photo.detail', $photo)}}">{{ucwords(strtolower(substr($photo->Titre,0,40)))}}...</a></h4>
         <p><i class="fas fa-map-marker-alt"></i> <a href="#">{{$photo->Lieu}}</a></p>
         <a class="read-more-btn" href="{{ route('photo.detail', $photo)}}">lire plus</a>
         </div>

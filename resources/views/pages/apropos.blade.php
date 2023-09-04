@@ -156,7 +156,7 @@ Celle d’Initier, d’élaborer, de coordonner, de suivre, et de mettre en œuv
     <div class="fun-facts-card">
     <i class="flaticon-park-1"></i>
     <h2>
-    <span class="odometer" data-count="15">00</span>
+    <span class="odometer" data-count="{{date('Y')-2005}}">00</span>
     <span class="sign-icon">+</span>
     </h2>
     <p>Années d'existence</p>
@@ -166,7 +166,7 @@ Celle d’Initier, d’élaborer, de coordonner, de suivre, et de mettre en œuv
     <div class="fun-facts-card last-card">
     <i class="flaticon-award"></i>
     <h2>
-    <span class="odometer" data-count="100">00</span>
+    <span class="odometer" data-count="50">00</span>
     <span class="sign-icon">+</span>
     </h2>
     <p>Programmes Réussis</p>

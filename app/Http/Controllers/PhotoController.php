@@ -14,7 +14,7 @@ class PhotoController extends Controller
     public function index()
     {
         
-        $photos = DB::table('photos')->orderBy('id','desc')->paginate(5);
+        $photos = DB::table('photos')->orderBy('date','desc')->take(30)->paginate(5);
         return view('admin.photo.index', compact('photos'));
     }
 
@@ -64,7 +64,7 @@ class PhotoController extends Controller
 
      public function affiche()
      {
-        $photos = DB::table('photos')->orderBy('id','desc')->paginate(3);
+        $photos = DB::table('photos')->orderBy('date','desc')->take(30)->paginate(6);
         return view('pages.photo.allphoto',compact('photos'));
      }
     public function show(Photo $photo)

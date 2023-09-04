@@ -13,7 +13,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = DB::table('articles')->orderBy('Date','desc')->paginate(5);
+        $articles = DB::table('articles')->orderBy('Date','desc')->take(30)->paginate(5);
         return view('admin.article.index',compact('articles'));
     }
 
@@ -59,7 +59,7 @@ class ArticleController extends Controller
     public function show(Article $article)
     {
         $article = Article::where('id',$article->id)->first();
-        $ar = Article::latest()->take(4)->get();
+        $ar = DB::table('articles')->orderBy('Date','desc')->take(4)->get();
         return view('pages.article.show',compact('article','ar')) ; 
     } 
 
@@ -67,13 +67,13 @@ class ArticleController extends Controller
     public function detail(Article $article)
     {
         $article = Article::where('id',$article->id)->first();
-        $ar = Article::latest()->take(4)->get();
+        $ar =DB::table('articles')->orderBy('Date','desc')->take(4)->get();
         return view('pages.article.show',compact('article','ar')) ; 
     }
 
     public function affiche(){
         
-        $articles= DB::table('articles')->orderBy('Date','desc')->paginate(3);
+        $articles= DB::table('articles')->orderBy('Date','desc')->take(30)->paginate(3);
 
         return view('pages.article.allarticles',compact('articles'));
 

@@ -14,12 +14,12 @@ class OffreController extends Controller
      */
     public function index()
     {
-        $offres= DB::table('offres')->orderBy('id','desc')->paginate(5);
+        $offres= DB::table('offres')->orderBy('dateP','desc')->take(30)->paginate(5);
         return view('admin.offre.index',compact('offres'));
     }
     public function index2()
     {
-        $offres= DB::table('offres')->orderBy('id','desc')->paginate(5);
+        $offres= DB::table('offres')->orderBy('dateP','desc')->take(30)->paginate(5);
         return view('pages.offre.alloffre',compact('offres'));
     }
 

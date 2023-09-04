@@ -118,6 +118,7 @@
 <li class="nav-item"><a href="{{ route('activity.sport')}}" class="nav-link">sport</a></li>
 <li class="nav-item"><a href="{{ route('activity.jeunesse')}}" class="nav-link">jeunesse</a></li>
 <li class="nav-item"><a href="{{ route('activity.volontaire')}}" class="nav-link">volontaire</a></li>
+<li class="nav-item"><a href="#" class="nav-link">Autres</a></li>
 </ul>
 </li>
 <li class="nav-item">
@@ -134,10 +135,10 @@
 <li class="nav-item">
 <a href="#" class="nav-link dropdown-toggle">Filliales</a>
 <ul class="dropdown-menu">
-<li class="nav-item"><a href="#" class="nav-link">PVC</a></li>
-<li class="nav-item"><a href="#" class="nav-link">PVOC</a></li>
-<li class="nav-item"><a href="#" class="nav-link">CGRE</a></li>
-<li class="nav-item"><a href="#" class="nav-link">REPRESENTATION</a></li>
+<li class="nav-item"><a href="https://ecowasvolunteers.com/" target="_blank" class="nav-link">PVC</a></li>
+<li class="nav-item"><a href="#" class="nav-link" target="_blank">PVOC</a></li>
+<li class="nav-item"><a href="#" class="nav-link" target="_blank">CGRE</a></li>
+<li class="nav-item"><a href="#" class="nav-link" target="_blank">REPRESENTATION</a></li>
 </ul>
 </li>
 </ul>

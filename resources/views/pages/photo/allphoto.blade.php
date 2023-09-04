@@ -13,7 +13,7 @@
         <li>{{$photo->Categorie}}</li>
         <li>{{$photo->Date}}</li>
         </ul>
-        <h4><a href="{{ route('photo.detail', $photo->id)}}">{{$photo->Titre}}</a></h4>
+        <h4><a href="{{ route('photo.detail', $photo->id)}}">{{ucwords(strtolower(substr($photo->Titre,0,40)))}}...</a></h4>
         <p><i class="fas fa-map-marker-alt"></i> <a href="#">{{$photo->Lieu}}</a></p>
         <a class="read-more-btn" href="{{ route('photo.detail', $photo->id)}}">lire plus</a>
         </div>
